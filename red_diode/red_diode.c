@@ -1,7 +1,15 @@
 #include <wiringPi.h>
+#include <signal.h>
 #include <stdio.h>
 
 #define ledPin 0
+
+/* Signal Handler for SIGINT */
+void sigintHandler(int signal) 
+{ 
+    digitalWrite(ledPin, LOW);
+	printf("Turning off diode\n"); 
+} 
 
 int main(void)
 {
@@ -11,6 +19,13 @@ int main(void)
 	}
 	
 	printf("wiringPi initialize successfully, GPIO %d(wiringPi pin)\n", ledPin);
+	
+	if(signal(SIGINT, sigintHandler) == SIG_ERR){
+		printf("setup signal handler for Ctrl-C failed!\n");
+		return 1;
+	}
+	
+	printf("Setup signal handler for Ctrl-C succeded!\n");
 	
 	pinMode(ledPin, OUTPUT);
 	
@@ -22,9 +37,6 @@ int main(void)
 		printf("... led off\n");
 		delay(1000);
 	}
-	
-	digitalWrite(ledPin, LOW);
-	printf("Turning off diode\n");
 	
 	return 0;
 }
