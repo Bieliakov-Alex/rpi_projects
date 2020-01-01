@@ -1,6 +1,7 @@
 #include <wiringPi.h>
 #include <signal.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define ledPin 0
 
@@ -8,7 +9,8 @@
 void sigintHandler(int signal) 
 { 
     digitalWrite(ledPin, LOW);
-	printf("Turning off diode\n"); 
+	printf("Turning off diode\n");
+	exit(1);
 } 
 
 int main(void)
