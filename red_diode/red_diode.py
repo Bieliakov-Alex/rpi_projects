@@ -14,6 +14,9 @@ def loop():
 		GPIO.output(ledPin, GPIO.HIGH)
 		print('...led on')
 		time.sleep(1)
+		GPIO.output(ledPin, GPIO.LOW)
+		print('led off...')
+		time.sleep(1)
 
 def destroy():
 	GPIO.output(ledPin, GPIO.LOW)
