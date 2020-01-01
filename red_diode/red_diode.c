@@ -23,5 +23,8 @@ int main(void)
 		delay(1000);
 	}
 	
+	digitalWrite(ledPin, LOW);
+	printf("Turning off diode\n");
+	
 	return 0;
 }
