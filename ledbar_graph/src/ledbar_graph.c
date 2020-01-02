@@ -4,11 +4,14 @@
 #include <stdlib.h>
 
 #define ledCounts 10
-int pins[ledCounts] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+int pins[ledCounts] = {0, 1, 2, 3, 4, 5, 6, 8, 9, 10};
 
 /* Signal Handler for SIGINT */
 void sigintHandler(int signal) {
-  digitalWrite(ledPin, LOW);
+  int i;
+  for(i = 0; i < ledCounts; ++i) {
+    digitalWrite(pins[i], LOW);
+  }
   printf("Turning off diode\n");
   exit(1);
 }
