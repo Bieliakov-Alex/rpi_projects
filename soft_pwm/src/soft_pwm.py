@@ -37,4 +37,4 @@ if __name__ == '__main__':
     try:
         loop()
     except KeyboardInterrupt:
-        destroy(0)
+        destroy()
