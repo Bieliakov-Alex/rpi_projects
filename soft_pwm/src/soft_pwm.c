@@ -1,6 +1,8 @@
 #include "softPwm.h"
 #include "wiringPi.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
 
 #define ledPin 1
 
