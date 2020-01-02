@@ -1,5 +1,7 @@
 #include "wiringPi.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
 
 #define ledPin 1
 
@@ -26,7 +28,7 @@ int main(void) {
     return 1;
   }
 
-  pinMode(ledPin, PWM_OUTPUT)
+  pinMode(ledPin, PWM_OUTPUT);
 
   while (1) {
     for (i = 0; i < 100; ++i) {
