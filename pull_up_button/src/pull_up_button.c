@@ -17,8 +17,9 @@ int main(void) {
     if (digitalRead(buttonPin) == HIGH) {
       printf("HIGH\n");
     } else {
-      printf("Low\n");
+      printf("LOW\n");
     }
+    delay(500);
   }
 
   return 0;
