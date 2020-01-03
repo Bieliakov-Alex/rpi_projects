@@ -21,9 +21,9 @@ void sigintHandler(int signal) {
 }
 
 void setupLedPin(void) {
-  softPwmCreate(ledPinRed, 0, 1024);
-  softPwmCreate(ledPinGreen, 0, 1024);
-  softPwmCreate(ledPinBlue, 0, 1024);
+  softPwmCreate(ledPinRed, 0, 255);
+  softPwmCreate(ledPinGreen, 0, 255);
+  softPwmCreate(ledPinBlue, 0, 255);
 }
 
 void setLedColor(int r, int g, int b) {
@@ -33,7 +33,7 @@ void setLedColor(int r, int g, int b) {
 }
 
 int main(void) {
-  int r, g, b, i, j, k;
+  int r, g, b;
 
   printf("Program is starting...\n");
 
@@ -50,9 +50,9 @@ int main(void) {
   setupLedPin();
 
   while (1) {
-    for (r = 0; r < 1024; ++r) {
-      for (g = 0; g < 1024; ++g) {
-        for (b = 0; b < 1024; ++b) {
+    for (r = 0; r < 255; ++r) {
+      for (g = 0; g < 255; ++g) {
+        for (b = 0; b < 25; ++b) {
           setLedColor(r, g, b);
           printf("r=%d, g=%d, b=%d\n", r, g, b);
           delay(300);
