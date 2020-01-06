@@ -1,7 +1,7 @@
 #include "wiringPi.h"
 #include <stdio.h>
 
-#define busserPin 0
+#define buzzerPin 0
 #define buttonPin 1
 
 int main(void) {
@@ -25,4 +25,6 @@ int main(void) {
       printf("buzzer turned off <<<\n");
     }
   }
+
+  return 0;
 }
