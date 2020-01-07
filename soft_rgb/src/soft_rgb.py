@@ -51,8 +51,9 @@ def destroy():
     bus.close()
     GPIO.cleanup()
 
-if __name__ = '__main__':
-    print 'Program is starting...'
+
+if __name__ == '__main__':
+    print('Program is starting...')
     setup()
     try:
         loop()
